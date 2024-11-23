@@ -1,0 +1,9 @@
+PyPDF2
+pdfplumber
+PyMuPDF
+Levenshtein
+requests
+nltk
+Sastrawi
+scikit-learn
+streamlit
