@@ -94,7 +94,8 @@ def combined_similarity(text1, text2):
     return levenshtein_score * 100  # Kembalikan dalam persen
 
 def fetch_pdf_links():
-    url = "https://f4cb-114-7-237-195.ngrok-free.app -> http://localhost:5000 /get_pdf_links"  # Ubah ke URL API yang sesuai
+  FLASK_URL = "https://f4cb-114-7-237-195.ngrok-free.app/get_pdf_links"
+  # Ubah ke URL API yang sesuai
     try:
         response = requests.get(url)
         response.raise_for_status()
