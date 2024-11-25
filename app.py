@@ -94,10 +94,9 @@ def combined_similarity(text1, text2):
     return levenshtein_score * 100  # Kembalikan dalam persen
 
 def fetch_pdf_links():
-  FLASK_URL = "https://f4cb-114-7-237-195.ngrok-free.app/get_pdf_links"
-  # Ubah ke URL API yang sesuai
+    FLASK_URL = "https://f4cb-114-7-237-195.ngrok-free.app/get_pdf_links"
     try:
-        response = requests.get(url)
+        response = requests.get(FLASK_URL)
         response.raise_for_status()
         data = response.json()
         pdf_links = data.get("pdf_links", [])
@@ -107,8 +106,9 @@ def fetch_pdf_links():
             st.error("Tidak ada tautan PDF yang ditemukan pada respons.")
             return []
     except requests.exceptions.RequestException as e:
-        st.error(f"Gagal mendapatkan data dari {url}. Error: {e}")
+        st.error(f"Gagal mendapatkan data dari {FLASK_URL}. Error: {e}")
         return []
+
 
 pdf_cache = {}
 
