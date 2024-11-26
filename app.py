@@ -15,6 +15,11 @@ import time
 import concurrent.futures
 import nltk
 import streamlit as st
+import nltk
+import os
+
+# Tambahkan path khusus untuk nltk_data
+nltk.data.path.append(r"C:\Users\USER\AppData\Roaming\nltk_data")
 
 # Download resources nltk
 nltk.download('punkt_tab')
