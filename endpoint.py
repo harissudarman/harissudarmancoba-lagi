@@ -2,8 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 @app.route('/')
-def home():
-    return "Welcome to the API! Use /get_pdf_links to access the PDF links."
+
 
 @app.route('/get_pdf_links', methods=['GET'])
 def get_pdf_links():
