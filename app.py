@@ -171,7 +171,7 @@ def check_similarity(uploaded_text, pdf_links, method="pdfplumber"):
 
 
 # Fungsi utama aplikasi
-def main():
+def home():
     st.title("Aplikasi Deteksi Plagiarisme")
 
     # Upload PDF
