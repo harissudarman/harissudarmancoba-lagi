@@ -94,20 +94,22 @@ def combined_similarity(text1, text2):
     return levenshtein_score * 100  # Kembalikan dalam persen
 
 def fetch_pdf_links():
-    FLASK_URL = "http://10.65.133.243:8501/get_pdf_links"
+    FLASK_URL = "https://harissudarmancoba-lagi.onrender.com/get_pdf_links"  # URL API
     try:
-        response = requests.get(FLASK_URL)
-        response.raise_for_status()
-        data = response.json()
-        pdf_links = data.get("pdf_links", [])
+        response = requests.get(FLASK_URL)  # Kirim permintaan GET ke API
+        response.raise_for_status()  # Periksa apakah respons sukses (status 200)
+        data = response.json()  # Parse respons JSON
+        pdf_links = data.get("pdf_links", [])  # Ambil daftar tautan PDF
+
         if pdf_links:
-            return pdf_links
+            return pdf_links  # Kembalikan daftar tautan jika ditemukan
         else:
             st.error("Tidak ada tautan PDF yang ditemukan pada respons.")
-            return []
+            return []  # Kembalikan daftar kosong jika tidak ada tautan
     except requests.exceptions.RequestException as e:
         st.error(f"Gagal mendapatkan data dari {FLASK_URL}. Error: {e}")
-        return []
+        return []  # Kembalikan daftar kosong jika ada error
+
 
 
 pdf_cache = {}
