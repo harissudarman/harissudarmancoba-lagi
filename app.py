@@ -19,7 +19,19 @@ import nltk
 import os
 
 # Tambahkan path khusus untuk nltk_data
-nltk.data.path.append(r"C:\Users\USER\AppData\Roaming\nltk_data")
+import nltk
+import os
+
+# Tentukan direktori untuk menyimpan data NLTK
+nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
+os.makedirs(nltk_data_path, exist_ok=True)
+
+# Atur path ke nltk_data
+nltk.data.path.append(nltk_data_path)
+
+# Unduh dataset 'punkt' jika belum ada
+nltk.download('punkt', download_dir=nltk_data_path)
+
 
 # Download resources nltk
 nltk.download('punkt_tab')
