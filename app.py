@@ -17,7 +17,7 @@ import nltk
 import streamlit as st
 
 # Download resources nltk
-nltk.download('punkt_tab')
+nltk.download('punkt')
 nltk.download('stopwords')
 
 # Cache untuk PDF dan hasil praproses
