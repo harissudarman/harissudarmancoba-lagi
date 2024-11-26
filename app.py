@@ -217,4 +217,4 @@ def home():
         st.info("Tunggu tombol ditekan untuk memulai cek plagiarisme.")
 
 if __name__ == "__main__":
-    main()
+    home()
