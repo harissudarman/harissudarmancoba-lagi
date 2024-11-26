@@ -1,4 +1,4 @@
-PyPDF2
+fPyPDF2
 pdfplumber
 PyMuPDF
 Levenshtein
@@ -8,3 +8,4 @@ Sastrawi
 scikit-learn
 streamlit
 gunicorn==20.1.0
+Flask==2.2.2
