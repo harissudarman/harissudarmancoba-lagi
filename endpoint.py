@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
 
 app = Flask(__name__)
-
+@app.route('/', methods=['GET'])
+def home():
+    return "https://harissudarmancoba-lagi.onrender.com/get_pdf_links" 
 @app.route('/get_pdf_links', methods=['GET'])
 def  home get_pdf_links():
     
@@ -30,7 +32,7 @@ def  home get_pdf_links():
         ]
     }
     
-    return  "https://harissudarmancoba-lagi.onrender.com/get_pdf_links" jsonify(pdf_links)
+    return  jsonify(pdf_links)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
